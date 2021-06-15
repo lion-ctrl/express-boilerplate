@@ -1,31 +1,43 @@
 {
-  "name": "seguros-back",
-  "version": "1.0.0",
-  "description": "Back End para el sistema de seguros",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "dev": "ts-node-dev src"
-  },
-  "author": "Leonardo Socorro",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.13",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.10",
-    "@types/express": "^4.17.12",
-    "@types/mongoose": "^5.11.97",
-    "@types/morgan": "^1.9.2",
-    "@types/node": "^15.12.2",
-    "eslint": "^7.28.0",
-    "eslint-config-airbnb-typescript-prettier": "^4.2.0",
-    "prettier": "^2.3.1",
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.3.2"
-  }
+	"name": "seguros-back",
+	"version": "1.0.0",
+	"description": "Back End para el sistema de seguros",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"dev": "ts-node-dev src",
+		"lint": "eslint . --fix",
+		"prepare": "husky install"
+	},
+	"author": "Leonardo Socorro",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.12.13",
+		"morgan": "^1.10.0"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.10",
+		"@types/express": "^4.17.12",
+		"@types/mongoose": "^5.11.97",
+		"@types/morgan": "^1.9.2",
+		"@types/node": "^15.12.2",
+		"@typescript-eslint/eslint-plugin": "^4.27.0",
+		"@typescript-eslint/parser": "^4.27.0",
+		"eslint": "^7.28.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-import": "^2.23.4",
+		"husky": "^6.0.0",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.1",
+		"ts-node-dev": "^1.1.6",
+		"typescript": "^4.3.2"
+	},
+	"lint-staged": {
+		"*.{js,ts}": "./node_modules/.bin/eslint --cache --fix",
+		"*.{js,css,md,ts}": "prettier --write"
+	}
 }
